@@ -6,6 +6,7 @@ function App() {
 
   const [name, setName] = useState<string>('');
   const [roomCode, setRoomCode] = useState<string>('');
+  const [players, setPlayers] = useState([]);
 
   return (
     <div className='h-screen bg-slate-100'>
@@ -15,7 +16,7 @@ function App() {
       <BrowserRouter>
       <Routes>
         <Route path='/' element={<Home name={name} setName={setName} roomCode={roomCode} setRoomCode={setRoomCode} />} />
-        <Route path='rooms' element={<Room />}>
+        <Route path='rooms' element={<Room name={name} players={players} />}>
           <Route path=':roomId' element={<></>} />
         </Route>
         <Route path='*' element={<NotFound />} />

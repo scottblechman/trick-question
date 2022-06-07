@@ -10,7 +10,7 @@ function LoginForm({ name, setName, onJoin }: LoginFormProps) {
     <form className='bg-white shadow-md rounded px-8 pt-6 pb-8 m-6'>
       <div className='mb-4'>
         <label className='block text-gray-700 text-sm font-bold mb-2' htmlFor='name'>
-          Name
+          {name.length}/12
         </label>
         <input className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' 
           id='name'
@@ -18,6 +18,7 @@ function LoginForm({ name, setName, onJoin }: LoginFormProps) {
           placeholder='Name'
           value={name}
           onChange={e => setName(e.target.value)}
+          maxLength={12}
         />
       </div>
       <div className='flex items-center justify-between mt-6'>
