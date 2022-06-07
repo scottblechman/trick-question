@@ -34,7 +34,8 @@ function Modal(props: ModalProps) {
               <div className='flex items-center justify-between'>
                 <button className='bg-teal-500 hover:bg-teal-700 disabled:hover:bg-teal-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline disabled:opacity-75' 
                 type='button'
-                disabled={props.okDisabled}>
+                disabled={props.okDisabled}
+                onClick={props.okClick}>
                   OK
                 </button>
               </div>

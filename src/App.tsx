@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Home } from './pages';
+import { Home, NotFound, Room } from './pages';
 
 function App() {
 
@@ -15,6 +15,10 @@ function App() {
       <BrowserRouter>
       <Routes>
         <Route path='/' element={<Home name={name} setName={setName} roomCode={roomCode} setRoomCode={setRoomCode} />} />
+        <Route path='rooms' element={<Room />}>
+          <Route path=':roomId' element={<></>} />
+        </Route>
+        <Route path='*' element={<NotFound />} />
       </Routes>
     </BrowserRouter>
     </div>

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Modal } from '../../common';
 import { LoginForm } from './components';
 
@@ -11,6 +12,7 @@ interface HomeProps {
 
 function Home({ name, setName, roomCode, setRoomCode }: HomeProps) {
 
+  let navigate = useNavigate();
   const [joinModalVisible, setJoinModalVisible] = useState(false);
 
   return (
@@ -20,7 +22,7 @@ function Home({ name, setName, roomCode, setRoomCode }: HomeProps) {
         setVisible={setJoinModalVisible}
         title='Enter Room Code'
         okDisabled={roomCode.length !== 4}
-        okClick={() => {}}>
+        okClick={() => navigate('/rooms/' + roomCode)}>
         <input className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
           type='text'
           placeholder='A1B2'
