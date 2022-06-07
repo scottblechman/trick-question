@@ -1,10 +1,11 @@
 interface LoginFormProps {
   name: string,
   setName: React.Dispatch<React.SetStateAction<string>>,
+  onHost: any
   onJoin: any
 }
 
-function LoginForm({ name, setName, onJoin }: LoginFormProps) {
+function LoginForm({ name, setName, onHost, onJoin }: LoginFormProps) {
 
   return (
     <form className='bg-white shadow-md rounded px-8 pt-6 pb-8 m-6'>
@@ -24,7 +25,8 @@ function LoginForm({ name, setName, onJoin }: LoginFormProps) {
       <div className='flex items-center justify-between mt-6'>
         <button className='bg-teal-500 hover:bg-teal-700 disabled:hover:bg-teal-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline disabled:opacity-75'
         type='button'
-        disabled={name.length === 0}>
+        disabled={name.length === 0}
+        onClick={onHost}>
           Host Game
         </button>
         <button className='bg-teal-500 hover:bg-teal-700 disabled:hover:bg-teal-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline disabled:opacity-75'
