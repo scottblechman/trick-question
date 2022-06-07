@@ -1,10 +1,17 @@
-import './App.css';
+import { useState } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Home } from './pages';
 
 function App() {
+
+  const [name, setName] = useState<string>('');
+
   return (
-    <div>
-      <p className='text-2xl text-center font-semibold'>trick question</p>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Home name={name} setName={setName} />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
